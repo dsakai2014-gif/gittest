@@ -74,15 +74,65 @@
 
 </body>
 </html>
-<section style="
-  margin: 40px auto;
-  max-width: 700px;
-  padding: 30px;
-  background: #dceeff;
-  border-radius: 15px;
-  text-align: center;
-">
-  <h2>Gitの練習中！</h2>
-  <p>現在、testブランチで新しい機能を追加しています。</p>
-  <p>add と commit を覚えて、Gitを使いこなせるようになろう！</p>
+<!-- カウンター機能 -->
+<section class="counter-card">
+  <h2>クリックカウンター</h2>
+  <p>ボタンを押して数字を増やしてみよう！</p>
+
+  <div id="count">0</div>
+
+  <button onclick="addCount()">＋ 1 増やす</button>
+  <button onclick="resetCount()" class="reset-button">リセット</button>
 </section>
+
+<style>
+  .counter-card {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff8e7;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  #count {
+    font-size: 60px;
+    font-weight: bold;
+    color: #e67e22;
+    margin: 20px;
+  }
+
+  .counter-card button {
+    margin: 5px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #e67e22;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .counter-card .reset-button {
+    background: #777;
+  }
+
+  .counter-card button:hover {
+    opacity: 0.8;
+  }
+</style>
+
+<script>
+  let count = 0;
+
+  function addCount() {
+    count++;
+    document.getElementById("count").textContent = count;
+  }
+
+  function resetCount() {
+    count = 0;
+    document.getElementById("count").textContent = count;
+  }
+</script>
